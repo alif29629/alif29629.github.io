@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Tanda Tangan Digital - SMPN 4 Tanjung Jabung Timur</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-top: 6px solid #28a745;
+            margin: 20px 0;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .header h2 {
+            margin: 0;
+            color: #28a745;
+            font-size: 20px;
+        }
+        .header p {
+            margin: 5px 0 0 0;
+            color: #6c757d;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .status-badge {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            border-bottom: 1px solid #c3e6cb;
+        }
+        .content {
+            padding: 25px;
+        }
+        .photo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-photo {
+            width: 130px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 3px solid #e9ecef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #495057;
+            margin-bottom: 10px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        td {
+            padding: 8px 0;
+            font-size: 14px;
+            vertical-align: top;
+        }
+        td.label {
+            color: #6c757d;
+            width: 35%;
+        }
+        td.value {
+            color: #212529;
+            font-weight: 500;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 15px;
+            font-size: 11px;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>SISTEM VERIFIKASI DIGITAL</h2>
+        <p>SMP NEGERI 4 TANJUNG JABUNG TIMUR</p>
+    </div>
+    
+    <div class="status-badge">
+        ✓ DOKUMEN & TANDA TANGAN ASLI / TERVERIFIKASI
+    </div>
+
+    <div class="content">
+        <!-- Foto Kepala Sekolah -->
+        <div class="photo-container">
+            <img src="fotosrihandayani.jpg" alt="Foto Sri Handayani, S.Pd." class="profile-photo" onerror="this.src='https://via.placeholder.com/130x170?text=Foto+Belum+Ada'">
+        </div>
+
+        <!-- Data Kepala Sekolah -->
+        <div class="section-title">Profil Pejabat</div>
+        <table>
+            <tr>
+                <td class="label">Nama</td>
+                <td class="value">Sri Handayani, S.Pd.</td>
+            </tr>
+            <tr>
+                <td class="label">NIP</td>
+                <td class="value">196901092002122002</td>
+            </tr>
+            <tr>
+                <td class="label">Jabatan</td>
+                <td class="value">Kepala Sekolah</td>
+            </tr>
+            <tr>
+                <td class="label">Pangkat / Gol</td>
+                <td class="value">Penata TK.I / (III/d)</td>
+            </tr>
+            <tr>
+                <td class="label">TMT</td>
+                <td class="value">01 Desember 2002</td>
+            </tr>
+        </table>
+
+        <!-- Data Instansi & Pendidikan -->
+        <div class="section-title">Informasi Tambahan</div>
+        <table>
+            <tr>
+                <td class="label">Unit Kerja</td>
+                <td class="value">SMP Negeri 4 Tanjung Jabung Timur</td>
+            </tr>
+            <tr>
+                <td class="label">Alamat Instansi</td>
+                <td class="value">Jl. Sultan Taha SK 9 Kiri, Desa Sido Mukti, Kec. Dendang</td>
+            </tr>
+            <tr>
+                <td class="label">Latar Belakang</td>
+                <td class="value">S1 Guru Bimbingan Konseling<br>Universitas Jambi (Lulus 2026)</td>
+            </tr>
+            <tr>
+                <td class="label">Biodata</td>
+                <td class="value">Perempuan<br>Pohkonyal, 09 Januari 1969</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        Halaman ini dibuat otomatis oleh sistem keamanan sekolah.<br>
+        &copy; 2026 SMP Negeri 4 Tanjung Jabung Timur. All Rights Reserved.
+    </div>
+</div>
+
+</body>
+</html>

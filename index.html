@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio & CV - Alif Wiguna, S.H.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #121824;
+            --bg-card: #1c2333;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --primary: #c5a880; /* Aksan Emas/Bronze */
+            --accent-green: #2e7d32;
+            --accent-blue: #1565c0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(28, 35, 51, 0.95);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0 4rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            padding-top: 7rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 3rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 3px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 0.7rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(197, 168, 128, 0.4);
+        }
+
+        /* Personal Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-card h4 {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            font-size: 1.05rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .skill-category h3 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3 i {
+            color: var(--primary);
+            margin-right: 0.75rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .skill-list li i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+            margin-top: 0.25rem;
+        }
+
+        .skill-list li strong {
+            color: var(--text-light);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: rgba(197, 168, 128, 0.3);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--bg-dark);
+            border: 3px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        .right::after { left: -8px; }
+
+        .content {
+            padding: 1.5rem;
+            background-color: var(--bg-card);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .left .content { border-top: 4px solid var(--accent-blue); }
+        .right .content { border-top: 4px solid var(--accent-green); }
+
+        .date {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+
+        .company {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .content ul li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Education & Org Grid */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .edu-card, .org-card {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .edu-card h4 {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .edu-card .year {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+        }
+
+        .edu-card .school {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background-color: rgba(197, 168, 128, 0.15);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Contact Section & Footer */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            background-color: var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 1rem;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+        }
+
+        .contact-method div h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .contact-method div p {
+            margin-bottom: 0;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            background-color: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 5px;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--bg-dark);
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #b59870;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0d111a;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 6rem;
+                justify-content: center;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-top: 2rem;
+            }
+            .hero-image img {
+                width: 240px;
+                height: 320px;
+            }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item::after { left: 22px; }
+            .right { left: 0; }
+            .edu-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; } /* Sederhana untuk mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">ALIF WIGUNA</div>
+        <ul class="nav-links">
+            <li><a href="#about">Tentang Saya</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section id="about" class="hero">
+            <div class="hero-text">
+                <h1>Alif Wiguna, S.H.</h1>
+                <div class="subtitle">Profesional Administrasi & Manajemen Operasional</div>
+                <p>
+                    Lulusan Sarjana Hukum (S.H.) yang memiliki kombinasi pengalaman unik selama lebih dari 5 tahun di bidang administrasi sekolah dinas serta 10 tahun dalam manajemen operasional perkebunan kelapa sawit mandiri. Memiliki keahlian mendalam dalam pengelolaan data organisasi menggunakan ekosistem Microsoft Office (Word, Excel, PowerPoint) serta dokumen legalitas. Terbiasa bekerja dengan ketelitian tinggi, adaptif terhadap lingkungan kerja lapangan maupun perkantoran, serta berkomitmen memberikan kontribusi nyata bagi efisiensi operasional perusahaan.
+                </p>
+                <a href="#contact" class="btn">Hubungi Saya</a>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h4>Tempat, Tgl Lahir</h4>
+                        <p>Sido Mukti, 09 November 1996</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Status</h4>
+                        <p>Menikah</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Alamat Domisili</h4>
+                        <p>RT 004 Desa Bukit Tempurung, Kab. Tanjung Jabung Timur, Jambi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="AL new.jpg" alt="Foto Resmi Alif Wiguna, S.H.">
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Keahlian & Kompetensi</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-folder-open"></i> Administrasi & Perkantoran</h3>
+                    <ul class="skill-list">
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Administrasi & Arsip:</strong> Manajemen basis data, pencatatan log-sheet, penyusunan laporan operasional berkala, pengarsipan dokumen hukum/surat resmi.</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Aplikasi Perkantoran:</strong> Tingkat mahir Microsoft Office (Word, Excel, PowerPoint) untuk pengolahan data numerik dan pelaporan.</span></li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fa-solid fa-trowel-brands"></i> Lapangan & Kreatif</h3>
+                    <ul class="skill-list">
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Kompetensi Lapangan:</strong> Pemahaman mendalam alur budidaya, logistik harian, dan manajemen tenaga kerja perkebunan kelapa sawit.</span></li>
+                        <li><i class="fa-solid fa-check"></i> <span><strong>Desain Grafis Pendukung:</strong> Pembuatan media visual informatif menggunakan Adobe Photoshop dan CorelDraw.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Pengalaman Kerja</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <div class="date">2021 – 2026</div>
+                        <h3>Staf Tata Usaha (Administrasi)</h3>
+                        <div class="company">SMP Negeri 4 Tanjung Jabung Timur</div>
+                        <ul>
+                            <li>Mengelola sistem kearsipan surat-menyurat dan dokumen operasional sekolah secara berkala.</li>
+                            <li>Memproses basis data kepegawaian dan kesiswaan secara berkala menggunakan Microsoft Excel & Word.</li>
+                            <li>Menyusun laporan administrasi bulanan dengan akurasi tinggi guna mendukung pelaporan dinas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <div class="date">2016 – 2026</div>
+                        <h3>Pengelola Perkebunan Kelapa Sawit</h3>
+                        <div class="company">Perkebunan Mandiri / Pribadi</div>
+                        <ul>
+                            <li>Merencanakan dan mengawasi jadwal pemeliharaan, pemupukan, hingga aktivitas panen harian.</li>
+                            <li>Melakukan pencatatan logistik hasil panen (tonase) dan kalkulasi distribusi operasional keuangan.</li>
+                            <li>Mengkoordinasikan tenaga kerja lapangan untuk menjaga stabilitas hasil produksi kelapa sawit.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Org Section -->
+        <section id="education">
+            <div class="edu-grid">
+                <div>
+                    <h2 class="section-title">Riwayat Pendidikan</h2>
+                    <div class="edu-card">
+                        <h4>S1 - Hukum Ekonomi Syariah</h4>
+                        <div class="year">2016 – 2020</div>
+                        <div class="school">Sekolah Tinggi Agama Islam Ma’arif Jambi</div>
+                        <div class="tags" style="margin-top: 0.5rem;"><span class="tag">IPK: 3.60 / 4.00</span></div>
+                    </div>
+                    <div class="edu-card">
+                        <h4>Aliyah Al-Huda Dendang</h4>
+                        <div class="year">2013 – 2016</div>
+                    </div>
+                    <div class="edu-card">
+                        <h4>Madrasah Tsanawiyah Al-Huda Dendang</h4>
+                        <div class="year">2010 – 2013</div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Pengalaman Organisasi</h2>
+                    <div class="org-card">
+                        <p style="color: var(--text-muted); margin-bottom: 1rem;">Aktif berpartisipasi dalam pengembangan kepemimpinan dan jaringan sosial melalui beberapa organisasi berikut:</p>
+                        <div class="tags">
+                            <span class="tag">Pramuka (KMD)</span>
+                            <span class="tag">OSIS</span>
+                            <span class="tag">IMD</span>
+                            <span class="tag">BEM</span>
+                            <span class="tag">PMII</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="border-bottom: none;">
+            <h2 class="section-title">Hubungi Hubungi</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Mari Terhubung!</h3>
+                    <p>Saya terbuka untuk peluang karir profesional, konsultasi administrasi, maupun kerja sama manajemen operasional. Silakan hubungi saya melalui salah satu saluran berikut.</p>
+                    
+                    <div class="contact-method">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Telepon / WhatsApp</h4>
+                            <p>+62 822-7943-4402</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email resmi</h4>
+                            <p>alif29629@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fa-brands fa-instagram"></i>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p>@alifwiguna_al</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Alamat Asal</h4>
+                            <p>RT 04 Dusun Suka Damai, Desa Bukit Tempurung, Kec. Mendahara Ulu, Kab. Tanjung Jabung Timur, Jambi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST" onsubmit="alert('Pesan berhasil terkirim! (Ini simulasi formal)'); return false;">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subjek / Keperluan">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="Pesan atau tawaran kerja sama Anda..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Alif Wiguna, S.H. | All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
